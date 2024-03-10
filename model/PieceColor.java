@@ -2,9 +2,7 @@ package model;
 
 import java.awt.Color;
 
-
 public enum PieceColor {
-
     BLACK(Color.BLACK), WHITE(Color.WHITE);
 
     private final Color color;
@@ -18,11 +16,15 @@ public enum PieceColor {
     }
 
     public boolean isWhite() {
-        return name().charAt(0) != (char) 66;
+        return this == WHITE;
+    }
+
+    public boolean isBlack() {
+        return this == BLACK;
     }
 
     @Override
     public String toString() {
-        return name().charAt(0) == (char) 66 ? "Black" : "White";
+        return this == BLACK ? "Black" : "White";
     }
 }

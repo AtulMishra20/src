@@ -264,12 +264,13 @@ public final class Board extends JPanel {
         // }
 
 
-        // Take input from user using a scanner object 
-        // Input Example : WRf1, WKg1, WPf2, WPh2, WPg3, BKb8, BNe8, BPa7, BPb7, BPc7, BRa5
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter the input string: ");
-            String input = scanner.nextLine();
-            setupBoard(input);
+        try (// Take input from user using a scanner object 
+                    // Input Example : WRf1, WKg1, WPf2, WPh2, WPg3, BKb8, BNe8, BPa7, BPb7, BPc7, BRa5
+            Scanner scanner = new Scanner(System.in)) {
+                System.out.println("Enter the input string: ");
+                String input = scanner.nextLine();
+                setupBoard(input);
+            }
     }
 
     public void resetReminder() {
